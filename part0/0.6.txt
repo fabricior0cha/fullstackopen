@@ -1,0 +1,17 @@
+title 0.6
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+note over browser
+    content-type: application/json;
+    {
+  "content": "new",
+  "date": "2022-10-24T15:51:10.944Z"
+}
+end note
+server-->browser: http status code 201
+note over browser
+
+rerenders 
+the note list on the page
+end note
+
+
