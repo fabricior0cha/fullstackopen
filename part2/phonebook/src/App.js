@@ -51,6 +51,7 @@ const App = () => {
           setNewName('')
           setNewNumber('')
         })
+        
         return;
       }
 
@@ -71,6 +72,13 @@ const App = () => {
         setPersons(persons.concat(returnedPerson))
         setNewName('')
         setNewNumber('')
+      })
+      .catch(error => {
+        console.log(error.response.data)
+        setMessage(`Error:${error.response.data.error}`)
+        setTimeout(() => {
+          setMessage(null)
+        }, 2000);
       })
     
   }
